@@ -16,20 +16,25 @@
 			}
 			body { background: #090909; }
 			#page-wrap { width: 280px; margin: 50px auto; }
-
-			#it, #is, .word { float: left; font-family: NotCourierSansRegular, monospace; text-transform: uppercase; 
-				color: #444; font-size: 24px; line-height: 28px; letter-spacing: 11px; }
-			#it, #is, .active { color: #eee; text-shadow: rgba(255,255,255,0.9) 0 0 5px,
-												rgba(255,255,200,0.9) 0 0 15px; }
+			#it, #is, .word { 
+				float: left; 
+				font-family: NotCourierSansRegular, monospace; 
+				text-transform: uppercase; 
+				color: #444; 
+				font-size: 24px; 
+				line-height: 28px; 
+				letter-spacing: 11px; 
+			}
+			#it, #is, .active { 
+				color: #eee; 
+				text-shadow: rgba(255,255,255,0.9) 0 0 5px, 
+							 rgba(255,255,200,0.9) 0 0 15px; 
+			}
 			.row { clear: both; }
 		</style>
 	</head>
 
 	<body>
-		<input type="text" id="hour" placeholder="hours">
-		<input type="text" id="minute" placeholder="mins">
-		<input type="submit" id="update" value="Change">
-
 		<div id="page-wrap">
 			<div class="row">
 				<div class="active" id="it">It</div>

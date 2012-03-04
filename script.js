@@ -1,19 +1,13 @@
 (function() {
-	var updateTime = function(h, m) {
+	"use strict";
+	var updateTime = function() {
 		var now = new Date(),
-			hour, minute, words,
-			twelveHourClockHour,
+			hour = now.getHours(), 
+			minute = now.getMinutes(), 
+			words, twelveHourClockHour,
 			i, len, highlights = [],
 			nums = ["one", "two", "three", "four", "five", "six",
 				"seven", "eight", "nine", "ten", "eleven", "twelve"];
-		
-		if (h === undefined || m === undefined) {
-			hour = now.getHours();
-			minute = now.getMinutes();
-		} else {
-			hour = parseInt(h, 10);
-			minute = parseInt(m, 10);
-		}
 
 		if (minute >= 3 && minute < 7) {
 			highlights.push("minute-five", "past");
@@ -37,8 +31,7 @@
 			highlights.push("o-clock");
 		}
 
-		twelveHourClockHour = hour % 12;
-		if (twelveHourClockHour === 0) twelveHourClockHour = 12;
+		twelveHourClockHour = (hour % 12 !== 0) ? hour % 12 : 12;
 
 		if (twelveHourClockHour === 12 && minute >= 37) {
 			highlights.push(nums[0]);
@@ -56,19 +49,12 @@
 		for (i = 0; i < len; i++) {
 			document.getElementById(highlights[i]).className = "word active";
 		}
-	}
+	};
 
 	var ready = function() {
 		var updateInterval = setInterval(updateTime, 1000);
 		updateTime();
-
-		document.getElementById('update').addEventListener('click', function() {
-			updateTime(document.getElementById('hour').value, 
-				document.getElementById('minute').value);
-			clearTimeout(updateInterval);
-			return false;
-		});
-	}
+	};
 
 	window.addEventListener('load', ready);
 })();
