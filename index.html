@@ -15,7 +15,7 @@
 			    font-style: normal;
 			}
 			body { background: #090909; }
-			#page-wrap { width: 280px; margin: 50px auto; }
+			#qlock { width: 300px; margin: 50px auto; }
 			#it, #is, .word { 
 				float: left; 
 				font-family: NotCourierSansRegular, monospace; 
@@ -27,15 +27,24 @@
 			}
 			#it, #is, .active { 
 				color: #eee; 
-				text-shadow: rgba(255,255,255,0.9) 0 0 5px, 
-							 rgba(255,255,200,0.9) 0 0 15px; 
+				text-shadow: rgba(255,255,255,0.9) 0 0 5px, rgba(255,255,200,0.9) 0 0 15px; 
 			}
 			.row { clear: both; }
+			p { 
+				width: 300px; 
+				margin: 0 auto 15px auto; 
+				color: #777; 
+				font-family: NotCourierSansRegular, Helvetica, Arial, sans-serif; 
+				font-size: 12px; 
+				line-height: 22px;
+			}
+			a { color: #ddd; }
+			a:hover { text-shadow: rgba(255,255,255,0.9) 0 0 5px, rgba(255,255,200,0.9) 0 0 15px;  }
 		</style>
 	</head>
 
 	<body>
-		<div id="page-wrap">
+		<div id="qlock">
 			<div class="row">
 				<div class="active" id="it">It</div>
 				<div class="word">l</div>
@@ -87,8 +96,29 @@
 				<div class="word">se</div>
 				<div class="word" id="o-clock">oclock</div>
 			</div>
-		</div> <!-- #page-wrap -->
+		</div>
+
+		<p>
+			This demo carefully handcoded by Antti Mattila. You should <a href="http://twitter.com/anttti">follow me on Twitter</a>.
+		</p>
+		<p>
+			The original, slightly more expensive QLOCKTWO is by <a id="original" href="http://qlocktwo.com/index.php?lang=en">Biegert &amp; Funk</a>.
+		</p>
+
+		<a href="http://github.com/anttti/webQLOCK"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
 
 		<script defer src="script.js"></script>
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-7501637-4']);
+			_gaq.push(['_trackPageview']);
+			
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			//		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			ga.src = 'http://www.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
 	</body>
 </html>
